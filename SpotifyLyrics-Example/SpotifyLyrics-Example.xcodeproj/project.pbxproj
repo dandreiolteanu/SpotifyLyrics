@@ -12,6 +12,10 @@
 		951345DE2214BBB000A2E82F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 951345DC2214BBB000A2E82F /* Main.storyboard */; };
 		951345E02214BBB300A2E82F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 951345DF2214BBB300A2E82F /* Assets.xcassets */; };
 		951345E32214BBB300A2E82F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 951345E12214BBB300A2E82F /* LaunchScreen.storyboard */; };
+		951345EE2214BC2F00A2E82F /* UIView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951345ED2214BC2F00A2E82F /* UIView+Helpers.swift */; };
+		951345F12214BF2400A2E82F /* PerspectiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951345F02214BF2400A2E82F /* PerspectiveView.swift */; };
+		951345F422187B6E00A2E82F /* CircularStd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 951345F322187B6E00A2E82F /* CircularStd-Book.otf */; };
+		951345F622187B8F00A2E82F /* CircularStd-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 951345F522187B8F00A2E82F /* CircularStd-Bold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		951345DF2214BBB300A2E82F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		951345E22214BBB300A2E82F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		951345E42214BBB300A2E82F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		951345ED2214BC2F00A2E82F /* UIView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Helpers.swift"; sourceTree = "<group>"; };
+		951345F02214BF2400A2E82F /* PerspectiveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerspectiveView.swift; sourceTree = "<group>"; };
+		951345F322187B6E00A2E82F /* CircularStd-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Book.otf"; sourceTree = "<group>"; };
+		951345F522187B8F00A2E82F /* CircularStd-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Bold.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,9 @@
 		951345D72214BBB000A2E82F /* SpotifyLyrics-Example */ = {
 			isa = PBXGroup;
 			children = (
+				951345EF2214BF1200A2E82F /* PerspectiveView */,
+				951345EA2214BBEE00A2E82F /* Helpers */,
+				951345F222187B5A00A2E82F /* Fonts */,
 				951345D82214BBB000A2E82F /* AppDelegate.swift */,
 				951345DA2214BBB000A2E82F /* ViewController.swift */,
 				951345DC2214BBB000A2E82F /* Main.storyboard */,
@@ -62,6 +73,31 @@
 				951345E42214BBB300A2E82F /* Info.plist */,
 			);
 			path = "SpotifyLyrics-Example";
+			sourceTree = "<group>";
+		};
+		951345EA2214BBEE00A2E82F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				951345ED2214BC2F00A2E82F /* UIView+Helpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		951345EF2214BF1200A2E82F /* PerspectiveView */ = {
+			isa = PBXGroup;
+			children = (
+				951345F02214BF2400A2E82F /* PerspectiveView.swift */,
+			);
+			path = PerspectiveView;
+			sourceTree = "<group>";
+		};
+		951345F222187B5A00A2E82F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				951345F322187B6E00A2E82F /* CircularStd-Book.otf */,
+				951345F522187B8F00A2E82F /* CircularStd-Bold.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,9 +158,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				951345F622187B8F00A2E82F /* CircularStd-Bold.otf in Resources */,
 				951345E32214BBB300A2E82F /* LaunchScreen.storyboard in Resources */,
 				951345E02214BBB300A2E82F /* Assets.xcassets in Resources */,
 				951345DE2214BBB000A2E82F /* Main.storyboard in Resources */,
+				951345F422187B6E00A2E82F /* CircularStd-Book.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +174,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				951345DB2214BBB000A2E82F /* ViewController.swift in Sources */,
+				951345F12214BF2400A2E82F /* PerspectiveView.swift in Sources */,
+				951345EE2214BC2F00A2E82F /* UIView+Helpers.swift in Sources */,
 				951345D92214BBB000A2E82F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
