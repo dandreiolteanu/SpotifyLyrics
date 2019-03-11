@@ -1,4 +1,5 @@
 # SpotifyLyrics
+![](https://ibb.co/5M9hZ5k)
 
 This project showcases my implementation on how I think Spotify made the Lyrics animation.
 
