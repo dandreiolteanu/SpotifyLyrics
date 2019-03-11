@@ -43,11 +43,36 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yHr-YG-JQ8">
+                                <rect key="frame" x="0.0" y="678" width="375" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="koG-Tk-qZN">
+                                <rect key="frame" x="107.66666666666669" y="714" width="160" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="Qzl-MK-fkb"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="yAxis"/>
+                                    <segment title="xAxis"/>
+                                    <segment title="Both"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="segmentedControlValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="nrU-gB-pdM"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yHr-YG-JQ8" secondAttribute="trailing" id="JE1-3c-pw9"/>
+                            <constraint firstItem="koG-Tk-qZN" firstAttribute="centerY" secondItem="yHr-YG-JQ8" secondAttribute="centerY" id="NNO-ob-Eah"/>
+                            <constraint firstItem="yHr-YG-JQ8" firstAttribute="top" secondItem="8uD-U2-uzk" secondAttribute="bottom" id="SB3-19-2lm"/>
+                            <constraint firstItem="yHr-YG-JQ8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="VJL-pA-OwI"/>
                             <constraint firstItem="8uD-U2-uzk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Yxu-iS-3gm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8uD-U2-uzk" secondAttribute="bottom" constant="100" id="biy-Nb-1oD"/>
+                            <constraint firstItem="yHr-YG-JQ8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sHi-a4-3Fg"/>
+                            <constraint firstItem="koG-Tk-qZN" firstAttribute="centerX" secondItem="yHr-YG-JQ8" secondAttribute="centerX" id="uNT-wF-SuB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -55,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1079.2" y="132.68365817091455"/>
+            <point key="canvasLocation" x="1079.2" y="132.26600985221674"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TDQ-xY-5IM">

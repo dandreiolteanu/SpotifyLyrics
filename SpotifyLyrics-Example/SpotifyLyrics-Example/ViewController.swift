@@ -10,10 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    private let frontView = UIImageView(image: #imageLiteral(resourceName: "frontImg"))
-    private let behindView = UIImageView(image: #imageLiteral(resourceName: "behindImg"))
+    // MARK: - Private properties
 
-    private lazy var perspectiveView = PerspectiveView(frontView: frontView, behindView: behindView)
+    private lazy var perspectiveView: PerspectiveView = {
+        let frontView = UIImageView(image: #imageLiteral(resourceName: "frontImg"))
+        let behindView = UIImageView(image: #imageLiteral(resourceName: "behindImg"))
+        return PerspectiveView(frontView: frontView, behindView: behindView)
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +29,13 @@ class ViewController: UIViewController {
             perspectiveView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -20),
             perspectiveView.heightAnchor.constraint(equalToConstant: 320),
             perspectiveView.widthAnchor.constraint(equalToConstant: 320)])
+    }
+
+    // MARK: - Actions
+
+    @IBAction private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        guard let newDirection = PerspectiveView.Direction(rawValue: sender.selectedSegmentIndex) else { return }
+        perspectiveView.direction = newDirection
     }
 }
 

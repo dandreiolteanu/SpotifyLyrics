@@ -10,7 +10,7 @@ I wrote a blog post on **Medium** about how to implement this animation step-by-
 
 It's available here: [Re-creating the Spotify Lyrics Animation.](https://medium.com/p/458c4f1319e8/edit)
 
- ![Their Demo Gif](https://cdn-images-1.medium.com/max/1600/1*KDg8tTyvgQLIKnx-QtE3mA.gif)
+![Their Demo Gif](https://cdn-images-1.medium.com/max/1600/1*KDg8tTyvgQLIKnx-QtE3mA.gif)
 
 ## Instructions
 

@@ -12,8 +12,56 @@ class PerspectiveView: UIView {
 
     // MARK: - Public properties
 
-    /// Default dismissalOffset is set to 80
-    public var dismissalOffset: CGFloat = 80
+    enum Direction: Int {
+        case yAxis
+        case xAxis
+        case both
+
+        var dismissalOffset: CGFloat {
+            switch self {
+            case .yAxis:
+                return 80
+            case .xAxis:
+                return 60
+            case .both:
+                return 90
+            }
+        }
+
+        var alphaFadeOffset: CGFloat {
+            switch self {
+            case .yAxis, .xAxis:
+                return 20
+            case .both:
+                return 40
+            }
+        }
+
+        func transform(from translation: CGPoint) -> CGAffineTransform {
+            switch self {
+            case .yAxis:
+                return CGAffineTransform(translationX: 0, y: translation.y)
+            case .xAxis:
+                return CGAffineTransform(translationX: translation.x, y: 0)
+            case .both:
+                return CGAffineTransform(translationX: translation.x, y: translation.y)
+            }
+        }
+
+        func offset(from translation: CGPoint) -> CGFloat {
+            switch self {
+            case .yAxis:
+                return abs(translation.y)
+            case .xAxis:
+                return abs(translation.x)
+            case .both:
+                return (abs(translation.x) + abs(translation.y)) / 1.5
+            }
+        }
+    }
+
+    /// Default direction is set to yAxis
+    var direction: Direction = .yAxis
 
     // MARK: - Private properties
 
@@ -90,20 +138,15 @@ class PerspectiveView: UIView {
     }
 
     private func handlePanChanged(_ translation: CGPoint) {
-        var alphaPercent: CGFloat = 0
-        let alphaFadeOffset: CGFloat = 20
+        let offset = direction.offset(from: translation)
 
         // Noticed that spotify makes the alpha percent grow quickly
-        alphaPercent = 1 - (abs(translation.y) - alphaFadeOffset) / 100
+        let alphaPercent = 1 - (offset - direction.alphaFadeOffset) / 100
 
-        aboveView.transform = CGAffineTransform(translationX: 0, y: translation.y)
-        aboveView.alpha = abs(translation.y) > alphaFadeOffset ? alphaPercent : 1.0
+        aboveView.transform = direction.transform(from: translation)
+        aboveView.alpha = offset > direction.alphaFadeOffset ? alphaPercent : 1.0
 
-        var offset: CGFloat = 0
-
-        offset = abs(translation.y)
-
-        guard offset > dismissalOffset else { return }
+        guard offset > direction.dismissalOffset else { return }
         panGesture.isEnabled = false
         handleTransition()
     }
