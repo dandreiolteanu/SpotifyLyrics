@@ -15,7 +15,7 @@ It's available here: [Re-creating the Spotify Lyrics Animation.](https://medium.
 
 ## Instructions
 
-To run, you can `download` or `clone` the repo and open `SpotifyLyrics.xcodeproj`.
+To run, you can `download` or `clone` the repo and open `SpotifyLyrics-Example.xcodeproj`.
 
 ## License
 
